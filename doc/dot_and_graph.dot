@@ -1,0 +1,4 @@
+digraph pyUML {
+"pydot.Dot" [label="{pydot.Dot||}", shape=record];
+GraphClass [label="{Graph||+ add_aggregation()\l+ add_class()\l+ add_classes()\l+ add_composition()\l+ add_edge()\l+ add_implementation()\l}", shape=record];
+}

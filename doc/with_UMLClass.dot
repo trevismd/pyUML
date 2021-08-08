@@ -1,0 +1,8 @@
+digraph pyUML {
+"pydot.Dot" [label="{pydot.Dot||}", shape=record];
+GraphClass [label="{Graph||+ add_aggregation()\l+ add_class()\l+ add_classes()\l+ add_composition()\l+ add_edge()\l+ add_implementation()\l}", shape=record];
+"pydot.Dot" -> GraphClass  [arrowtail=onormal, dir=back];
+"pydot.Node" [label="{pydot.Node||}", shape=record];
+UMLClass [label="{UMLClass|+ name : string\l+ caption : string\l- _attributes : dict[dict]\l- _methods : dict[list]\l|+ add_attribute()\l+ add_attributes()\l+ add_method()\l+ add_methods()\l+ update_content()\l- _render_attributes()\l- _render_methods()\l- _get_source_sep()\l}", shape=record];
+"pydot.Node" -> UMLClass  [arrowtail=onormal, dir=back];
+}

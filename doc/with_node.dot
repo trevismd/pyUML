@@ -1,0 +1,15 @@
+digraph pyUML {
+"pydotplus.Dot" [label="{pydotplus.Dot||}", shape=record];
+"pydotplus.Node" [label="{pydotplus.Node||}", shape=record];
+"pydotplus.Edge" [label="{pydotplus.Edge||}", shape=record];
+"pydotplus.Dot" -> GraphClass  [arrowtail=onormal, dir=back];
+GraphClass [label="{Graph||+ add_foreign_key()\l+ implements()\l+ add_class()\l}", shape=record];
+UMLClass [label="{UMLClass|+ name : string\l+ caption : string\l- _attributes : dict\l- _methods : list\l|+ add_attribute()\l+ add_attributes()\l+ add_method()\l+ add_methods()\l+ update_content()\l- _render_attributes()\l- _render_methods()\l- _get_source_sep()\l}", shape=record];
+UMLClassWithPublicIntID [label="{UMLClassWithPublicIntID|+ id : int\l|}", shape=record];
+UMLClass -> UMLClassWithPublicIntID  [arrowtail=onormal, dir=back];
+ForeignKey [label="{ForeignKey||}", shape=record];
+Implements [label="{Implements||}", shape=record];
+"pydotplus.Edge" -> ForeignKey  [arrowtail=onormal, dir=back];
+"pydotplus.Edge" -> Implements  [arrowtail=onormal, dir=back];
+"pydotplus.Node" -> UMLClass  [arrowtail=onormal, dir=back];
+}

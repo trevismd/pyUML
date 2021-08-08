@@ -1,0 +1,22 @@
+digraph pyUML {
+"pydot.Dot" [label="{pydot.Dot||}", shape=record];
+GraphClass [label="{Graph||+ add_aggregation()\l+ add_class()\l+ add_classes()\l+ add_composition()\l+ add_edge()\l+ add_implementation()\l}", shape=record];
+"pydot.Dot" -> GraphClass  [arrowtail=onormal, dir=back];
+"pydot.Node" [label="{pydot.Node||}", shape=record];
+UMLClass [label="{UMLClass|+ name : string\l+ caption : string\l- _attributes : dict[dict]\l- _methods : dict[list]\l|+ add_attribute()\l+ add_attributes()\l+ add_method()\l+ add_methods()\l+ update_content()\l- _render_attributes()\l- _render_methods()\l- _get_source_sep()\l}", shape=record];
+"pydot.Node" -> UMLClass  [arrowtail=onormal, dir=back];
+UMLClassWithPublicIntID [label="{UMLClassWithPublicIntID||}", shape=record];
+UMLClass -> UMLClassWithPublicIntID  [arrowtail=onormal, dir=back];
+"pydot.Edge" [label="{pydot.Edge||}", shape=record];
+Association [label="{Association||+ set_multiplicity()\l}", shape=record];
+Implementation [label="{Implementation||}", shape=record];
+Aggregation [label="{Aggregation||}", shape=record];
+Composition [label="{Composition||}", shape=record];
+"pydot.Edge" -> Association  [arrowtail=onormal, dir=back];
+Association -> Implementation  [arrowtail=onormal, dir=back];
+Association -> Aggregation  [arrowtail=onormal, dir=back];
+Aggregation -> Composition  [arrowtail=onormal, dir=back];
+"pydot.Dot" -> "pydot.Node"  [arrowtail=diamond, dir=back, headlabel="\n1..*", taillabel="\n1"];
+"pydot.Dot" -> "pydot.Edge"  [arrowtail=diamond, dir=back, headlabel="\n0..*", taillabel="\n1"];
+GraphClass -> Association  [arrowtail=diamond, dir=back, headlabel="\n0..*", taillabel="\n1"];
+}

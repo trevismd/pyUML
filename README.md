@@ -58,8 +58,8 @@ association = UMLClass(
     "Association",
     methods=["set_multiplicity()"])
 
-implements = UMLClass(
-    "Implements")
+implementation = UMLClass(
+    "Implementation")
 
 aggregation = UMLClass(
     "Aggregation")
@@ -67,10 +67,9 @@ aggregation = UMLClass(
 composition = UMLClass(
     "Composition")
 
-graph.add_classes(edge, association, foreign_key, implements, aggregation, composition)
+graph.add_classes(edge, association, implementation, aggregation, composition)
 graph.add_implementation(association, edge)
-graph.add_implementation(foreign_key, association)
-graph.add_implementation(implements, association)
+graph.add_implementation(implementation, association)
 graph.add_implementation(aggregation, association)
 graph.add_implementation(composition, aggregation)
 
@@ -91,13 +90,11 @@ UMLClassWithPublicIntID [label="{UMLClassWithPublicIntID||}", shape=record];
 UMLClass -> UMLClassWithPublicIntID  [arrowtail=onormal, dir=back];
 "pydot.Edge" [label="{pydot.Edge||}", shape=record];
 Association [label="{Association||+ set_multiplicity()\l}", shape=record];
-ForeignKey [label="{ForeignKey||}", shape=record];
-Implements [label="{Implements||}", shape=record];
+Implementation [label="{Implementation||}", shape=record];
 Aggregation [label="{Aggregation||}", shape=record];
 Composition [label="{Composition||}", shape=record];
 "pydot.Edge" -> Association  [arrowtail=onormal, dir=back];
-Association -> ForeignKey  [arrowtail=onormal, dir=back];
-Association -> Implements  [arrowtail=onormal, dir=back];
+Association -> Implementation  [arrowtail=onormal, dir=back];
 Association -> Aggregation  [arrowtail=onormal, dir=back];
 Aggregation -> Composition  [arrowtail=onormal, dir=back];
 "pydot.Dot" -> "pydot.Node"  [arrowtail=diamond, dir=back, headlabel="\n1..*", taillabel="\n1"];
@@ -108,3 +105,7 @@ GraphClass -> Association  [arrowtail=diamond, dir=back, headlabel="\n0..*", tai
 and give
 
 <img src="./doc/with_compositions.png">
+
+### Dependencies
+* pydot
+* GraphViz, to render the graph (must be installed separately).

@@ -14,9 +14,6 @@ class Graph(pydot.Dot):
     def add_association(self, child, parent, *args, **kwargs):
         self.add_edge(Association(child, parent, *args, **kwargs))
 
-    def add_foreign_key(self, target, referenced, *args, **kwargs):
-        self.add_edge(ForeignKey(target, referenced, *args, **kwargs))
-
     def add_implementation(self, child, parent, *args, **kwargs):
         self.add_edge(Implementation(child, parent, *args, **kwargs))
 

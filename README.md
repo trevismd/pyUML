@@ -104,7 +104,7 @@ GraphClass -> Association  [arrowtail=diamond, dir=back, headlabel="\n0..*", tai
 ```
 and give
 
-<img src="./doc/with_compositions.png">
+![result](https://raw.githubusercontent.com/trevismd/pyUML/main/doc/with_compositions.png)
 
 ### Dependencies
 * pydot

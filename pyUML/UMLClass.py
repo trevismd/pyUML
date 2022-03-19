@@ -83,8 +83,8 @@ class UMLClass(pydot.Node):
 
 
 class UMLClassWithPublicIntID(UMLClass):
-    def __init__(self, name, attributes=None, methods=None, id_dtype="int"):
-        UMLClass.__init__(self, name, attributes=attributes, methods=methods)
+    def __init__(self, name, attributes=None, methods=None, id_dtype="int", **kwargs):
+        UMLClass.__init__(self, name, attributes=attributes, methods=methods, **kwargs)
         self._attributes["public"] = {"id": id_dtype,
                                       **self._attributes["public"]}
         self.update_content()
